@@ -1,0 +1,7 @@
+# dsh-plugin-api-usage-monitor bundle patch：把本插件插入 profile 的层栈。
+- insert:
+    - id: dsh-api-usage-monitor
+      name: dsh-plugin-api-usage-monitor
+      config:
+        # 前端轮询间隔（秒）
+        refreshSeconds: 60

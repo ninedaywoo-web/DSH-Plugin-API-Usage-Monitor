@@ -1,0 +1,67 @@
+{
+  "name": "dsh-plugin-api-usage-monitor",
+  "version": "1.9.0-rc.4",
+  "description": "A game-style balance, daily usage, peak/off-peak status, recharge and restart sidebar plugin for DeepSeek Harness.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ninedaywoo-web/DSH-Plugin-API-Usage-Monitor.git"
+  },
+  "homepage": "https://github.com/ninedaywoo-web/DSH-Plugin-API-Usage-Monitor#readme",
+  "bugs": {
+    "url": "https://github.com/ninedaywoo-web/DSH-Plugin-API-Usage-Monitor/issues"
+  },
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "harness",
+    "dsh",
+    "dsh-plugin",
+    "api-usage",
+    "balance-monitor",
+    "cost-tracker",
+    "token-usage",
+    "peak-pricing",
+    "off-peak-pricing"
+  ],
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "preflight": "node scripts/preflight.mjs",
+    "prepack": "npm test && npm run preflight"
+  },
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "assets",
+    "docs/images",
+    "cordis.patch.yml",
+    "README.md",
+    "README.en.md",
+    "ASSET-NOTICE.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "scripts",
+    "test"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [],
+      "platform": "web"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1"
+  }
+}
